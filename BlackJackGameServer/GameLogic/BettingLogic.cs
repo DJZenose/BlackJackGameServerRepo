@@ -5,10 +5,9 @@ using System.Text;
 
 namespace BlackJackGameServer
 {
-    class Program
+    class Bets
     {
-        static void Main(string[] args)
-        {
-        }
+        float bet;
+
     }
 }
