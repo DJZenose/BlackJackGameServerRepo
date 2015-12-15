@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class Player
+    public class Player
     {
-        public int[] playerCards = new int[22];
+        public List<int> playerCards = new List<int>;
         public string clieantID;
-        public float bet;
+        public double bet;
         public int cardTotal;
-        public float balance;
+        public double balance;
     }
 }

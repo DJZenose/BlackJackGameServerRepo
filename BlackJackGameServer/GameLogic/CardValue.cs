@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class CardValue
+    public class CardValue
     {
-        public int FindCardValue(int card)
+        static public int FindCardValue(int card)
         {
             int value = 0;
             switch (card)
