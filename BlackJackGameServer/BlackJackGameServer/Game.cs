@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*************
+*Programmers    : Connor McQuade & Brandon Erb
+*Professor      : Ed Barsalou
+*Date           : 13/12/2015
+*Description    : The game logic for the application and the server
+*FILE           : Game.cs
+**************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,20 +18,37 @@ namespace BlackJackGameServer
     {
         public GameLogic.Player dealer = new GameLogic.Player();
         public GameLogic.Player player1 = new GameLogic.Player();
+        public GameLogic.CardLogic newGame = new GameLogic.CardLogic();
 
+        /*
+        * Method        : TrackCards
+        * Parameters    : A card represent by a number
+        * Description   : adds the card to the list containing someones hand
+        */
         public void TrackCards (int card)
         {
             player1.playerCards.Insert(0,card)
         }
 
+        /*
+        * Method        : FinalTotal
+        * Returns       : void
+        * Parameters    : A card represent by a number
+        * Description   : Adds total that is your hands
+        */
         public void FinalTotal(int card)
         {
             player1.cardTotal += GameLogic.CardValue.FindCardValue(card);
         }
 
+        /*
+        * Method        : FinalTotal
+        * Returns       : void
+        * Parameters    : A card represent by a number
+        * Description   : Adds total that is your hands
+        */
         public void StartGame()
         {
-            GameLogic.CardLogic newGame = new GameLogic.CardLogic();
             dealer.playerCards.Insert(0, newGame.Deal()[0]);
             dealer.playerCards.Insert(1, newGame.Deal()[1]);
 
@@ -32,21 +56,45 @@ namespace BlackJackGameServer
             player1.playerCards.Insert(1, newGame.Deal()[1]);
         }
 
-        public void SendCards()
+        /*
+        * Method        : SendCards
+        * Returns       : int of the card
+        * Parameters    : N/A
+        * Description   : Sends a card to the client
+        */
+        public int SendCards()
         {
-            //Send cards to UI
+            return newGame.Hit();
         }
 
-        public void SendTotal()
+        /*
+        * Method        : SendTotals
+        * Returns       : total of your hand
+        * Parameters    : N/A
+        * Description   : Sends the total of your hand
+        */
+        public int SendTotal()
         {
-            //Send Total
+            return player1.cardTotal;
         }
 
-        public void SendBalance()
+        /*
+        * Method        : SendBalance
+        * Returns       : double that is your account balance
+        * Parameters    : N/A
+        * Description   : Sends the balance to the client
+        */
+        public double SendBalance()
         {
-           //Show Balance
+            return player1.balance;
         }
 
+        /*
+        * Method        : CompareResult
+        * Returns       : string the result status
+        * Parameters    : N/A
+        * Description   : Checks which player won
+        */
         public string CompareResult()
         {
             bool winLose = false;

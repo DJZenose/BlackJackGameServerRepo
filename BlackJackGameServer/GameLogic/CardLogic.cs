@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*************
+*Programmers    : Connor McQuade & Brandon Erb
+*Professor      : Ed Barsalou
+*Date           : 13/12/2015
+*Description    : The game logic for cards
+*FILE           : CardLogic.cs
+**************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +19,10 @@ namespace GameLogic
         private List<int> deck = new List<int>();
         private int deckNum;
 
+        /*
+        * Method        : CardLogic
+        * Description   : Constuctor
+        */
         public CardLogic()
         {
             deck = Shuffle();
@@ -34,6 +45,12 @@ namespace GameLogic
             return cards;
         }
 
+        /*
+        * Method        : Hit
+        * Returns       : a card represented by a int
+        * Parameters    : void
+        * Description   : gets a card off the top of the deck
+        */
         public int Hit()
         {
             int card;
@@ -41,7 +58,8 @@ namespace GameLogic
             deck.RemoveAt(0);
             return card;
         }
-        /*
+
+       /*
        * Method        :Shuffle
        * Returns       :int array of the shuffled deck
        * Parameters    :void
@@ -65,7 +83,7 @@ namespace GameLogic
             return deck;
         }
 
-        /*
+       /*
        * Method        :Card
        * Description   :Accessor for the card being drawn
        */

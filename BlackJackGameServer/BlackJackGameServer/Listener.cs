@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*************
+*Programmers    : Connor McQuade & Brandon Erb
+*Professor      : Ed Barsalou
+*Date           : 13/12/2015
+*Description    : The game logic for the application and the server
+*FILE           : Game.cs
+**************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;

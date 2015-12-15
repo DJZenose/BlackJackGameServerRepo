@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*************
+*Programmers    : Connor McQuade & Brandon Erb
+*Professor      : Ed Barsalou
+*Date           : 13/12/2015
+*Description    : It calculates the value of a cart
+*FILE           : CardValue.cs
+**************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +15,12 @@ namespace GameLogic
 {
     public class CardValue
     {
+        /*
+        * Method        : FindCardValue
+        * Returns       : int of the card value
+        * Parameters    : int representation of the card
+        * Description   : matches a card to its value
+        */
         static public int FindCardValue(int card)
         {
             int value = 0;
@@ -127,7 +140,7 @@ namespace GameLogic
                 case 38:
                     value = 10;
                     break;
-                case 39:51
+                case 39:
                     value = 10;
                     break;
                 case 40:
